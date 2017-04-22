@@ -90,7 +90,7 @@
                 <configuration>
                     <includes>
                         <include>**/*Test.java</include>
-                        <include>**/*TestSuite.java</include>
+                        <include>**/AcceptanceTestSuite.java</include>
                         <include>**/Test*.java</include>
                         <include>**/When*.java</include>
                     </includes>
