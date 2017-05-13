@@ -1,4 +1,4 @@
-Meta:@debug
+Meta:
 
 Narrative:
 In order to talk better
