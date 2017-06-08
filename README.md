@@ -14,3 +14,5 @@ To run all scenarios in 1 batch :
   
   more docs here : 
   **https://drive.google.com/file/d/0ByXXYqrGZKW9bXVxR3ZITmhERlE**
+  
+  To run tests you need Firefox version 29-38
