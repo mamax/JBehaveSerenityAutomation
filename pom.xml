@@ -5,39 +5,30 @@
     <groupId>com.test.framework</groupId>
     <artifactId>jbehave-serenity-automation</artifactId>
     <version>1.0-SNAPSHOT</version>
-
-    <name>Sample Serenity project using JBehave and WebDriver</name>
+    <name>SerenityJBehaveProject</name>
+    <description>Sample Serenity project using JBehave and WebDriver</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <serenity.version>1.2.2</serenity.version>
-        <serenity.jbehave.version>1.21.0</serenity.jbehave.version>
+        <serenity.jbehave.version>1.24.0</serenity.jbehave.version>
+        <jbehave.version>4.1</jbehave.version>
         <java.version>1.8</java.version>
         <maven-failsafe-plugin.version>2.19.1</maven-failsafe-plugin.version>
         <webdriver.driver>chrome</webdriver.driver>
     </properties>
 
-    <!--<repositories>-->
-      <!--<repository>-->
-        <!--<snapshots>-->
-        <!--<enabled>false</enabled>-->
-        <!--</snapshots>-->
-        <!--<id>central</id>-->
-        <!--<name>bintray</name>-->
-        <!--<url>http://jcenter.bintray.com</url>-->
-      <!--</repository>-->
-    <!--</repositories>-->
-    <!--<pluginRepositories>-->
-      <!--<pluginRepository>-->
-        <!--<snapshots>-->
-        <!--<enabled>false</enabled>-->
-        <!--</snapshots>-->
-        <!--<id>central</id>-->
-        <!--<name>bintray-plugins</name>-->
-        <!--<url>http://jcenter.bintray.com</url>-->
-      <!--</pluginRepository>-->
-    <!--</pluginRepositories>-->
+    <repositories>
+    <repository>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+        <id>bintray-epam-reportportal</id>
+        <name>bintray</name>
+        <url>http://dl.bintray.com/epam/reportportal</url>
+    </repository>
+</repositories>
 
     <dependencies>
         <dependency>
@@ -77,6 +68,16 @@
             <artifactId>webdrivermanager</artifactId>
             <version>1.6.2</version>
         </dependency>
+        <dependency>
+            <groupId>com.epam.reportportal</groupId>
+            <artifactId>agent-java-jbehave</artifactId>
+            <version>3.0.0-BETA-3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.reportportal</groupId>
+            <artifactId>logger-java-log4j</artifactId>
+            <version>3.0.2</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -85,7 +86,12 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-failsafe-plugin.version}</version>
                 <configuration>
-                    <skip>true</skip>
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>com.epam.reportportal.jbehave.ReportPortalStoryReporter</value>
+                        </property>
+                    </properties>
                 </configuration>
             </plugin>
             <plugin>

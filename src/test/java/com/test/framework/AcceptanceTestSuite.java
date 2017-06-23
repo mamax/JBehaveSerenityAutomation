@@ -1,8 +1,11 @@
 package com.test.framework;
 
+import com.epam.reportportal.jbehave.ReportPortalFormat;
+import com.epam.reportportal.jbehave.ReportPortalViewGenerator;
 import com.test.framework.utils.OsCheck;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import net.serenitybdd.jbehave.SerenityStories;
+import org.jbehave.core.configuration.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,6 +18,13 @@ public class AcceptanceTestSuite extends OptimizedParallelAcceptanceTestSuite {
         setDriverAccordingToOS();
         new SerenityStories().getSystemConfiguration().getEnvironmentVariables().setProperty("webdriver.chrome.driver", System.getProperty("webdriver.chrome.driver"));
         selectStoryFilesForRunningSuite();
+    }
+
+    public Configuration configuration() {
+        final Configuration configuration = super.configuration();
+        return configuration
+                .useStoryReporterBuilder(configuration.storyReporterBuilder().withFormats(ReportPortalFormat.INSTANCE))
+                .useViewGenerator(new ReportPortalViewGenerator());
     }
 
     private void setDriverAccordingToOS() {
