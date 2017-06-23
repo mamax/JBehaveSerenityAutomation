@@ -15,29 +15,29 @@
         <serenity.jbehave.version>1.21.0</serenity.jbehave.version>
         <java.version>1.8</java.version>
         <maven-failsafe-plugin.version>2.19.1</maven-failsafe-plugin.version>
-        <webdriver.driver>firefox</webdriver.driver>
+        <webdriver.driver>chrome</webdriver.driver>
     </properties>
 
-    <repositories>
-      <repository>
-        <snapshots>
-        <enabled>false</enabled>
-        </snapshots>
-        <id>central</id>
-        <name>bintray</name>
-        <url>http://jcenter.bintray.com</url>
-      </repository>
-    </repositories>
-    <pluginRepositories>
-      <pluginRepository>
-        <snapshots>
-        <enabled>false</enabled>
-        </snapshots>
-        <id>central</id>
-        <name>bintray-plugins</name>
-        <url>http://jcenter.bintray.com</url>
-      </pluginRepository>
-    </pluginRepositories>
+    <!--<repositories>-->
+      <!--<repository>-->
+        <!--<snapshots>-->
+        <!--<enabled>false</enabled>-->
+        <!--</snapshots>-->
+        <!--<id>central</id>-->
+        <!--<name>bintray</name>-->
+        <!--<url>http://jcenter.bintray.com</url>-->
+      <!--</repository>-->
+    <!--</repositories>-->
+    <!--<pluginRepositories>-->
+      <!--<pluginRepository>-->
+        <!--<snapshots>-->
+        <!--<enabled>false</enabled>-->
+        <!--</snapshots>-->
+        <!--<id>central</id>-->
+        <!--<name>bintray-plugins</name>-->
+        <!--<url>http://jcenter.bintray.com</url>-->
+      <!--</pluginRepository>-->
+    <!--</pluginRepositories>-->
 
     <dependencies>
         <dependency>
@@ -54,7 +54,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.7.7</version>
+            <version>1.7.21</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -71,6 +71,11 @@
             <groupId>com.googlecode.lambdaj</groupId>
             <artifactId>lambdaj</artifactId>
             <version>2.3.3</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>1.6.2</version>
         </dependency>
     </dependencies>
     <build>

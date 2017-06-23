@@ -1,4 +1,4 @@
-**#Serenity JBehave test automation framework#**
+***Serenity JBehave test automation framework***
 
 You can run scenarios in parallel.
 Tests in JBehave we can divide by batches;
